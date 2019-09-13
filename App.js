@@ -77,12 +77,14 @@ class Home extends Component {
         </View>
         <ScrollView style={{ flex: 1 }}>
           {routesInfo.map((item, index) => (
-            <TouchableOpacity style={styles.item} key={index}
-              onPress={() => { this.props.navigation.navigate(item.route) }}
-              activeOpacity={0.5}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Text style={styles.description}>{item.description}</Text>
-            </TouchableOpacity>
+            <View style={styles.item} key={index}>
+              <TouchableOpacity style={{ flex: 1 }}
+                onPress={() => { this.props.navigation.navigate(item.route) }}
+                activeOpacity={0.5}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.description}>{item.description}</Text>
+              </TouchableOpacity>
+            </View>
           ))}
         </ScrollView>
       </View>
